@@ -17,6 +17,7 @@ export const useGetMyRestaurant = () => {
         Authorization: `Bearer ${accessToken}`,
       },
     });
+
     if (!response.ok) {
       throw new Error("Failed to get restaurant");
     }
@@ -27,6 +28,7 @@ export const useGetMyRestaurant = () => {
     "fetchMyRestaurant",
     getMyRestaurantRequest
   );
+
   return { restaurant, isLoading };
 };
 
@@ -45,9 +47,11 @@ export const useCreateMyRestaurant = () => {
       },
       body: restaurantFormData,
     });
+
     if (!response.ok) {
       throw new Error("Failed to create restaurant");
     }
+
     return response.json();
   };
 
@@ -61,6 +65,7 @@ export const useCreateMyRestaurant = () => {
   if (isSuccess) {
     toast.success("Restaurant created!");
   }
+
   if (error) {
     toast.error("Unable to update restaurant");
   }
