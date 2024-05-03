@@ -43,7 +43,7 @@ const CuisineFilter = ({
 
       <div className="space-y-2 flex flex-col">
         {cuisineList
-          .slice(0, isExpanded ? cuisineList.length : 5)
+          .slice(0, isExpanded ? cuisineList.length : 7)
           .map((cuisine) => {
             const isSelected = selectedCuisines.includes(cuisine);
             return (
