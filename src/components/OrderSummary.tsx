@@ -56,7 +56,7 @@ const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
           <span>₦{(restaurant.deliveryPrice / 100).toFixed(2)}</span>
         </div>
         <Separator />
-      </CardContent>
+      </CardContent> 
     </>
   );
 };
