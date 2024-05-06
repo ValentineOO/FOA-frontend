@@ -52,7 +52,7 @@ const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
         ))}
         <Separator />
         <div className="flex justify-between">
-          <span>Delivery</span>{" "} 
+          <span>Delivery</span>{" "}
           <span>₦{(restaurant.deliveryPrice / 100).toFixed(2)}</span>
         </div>
         <Separator />
