@@ -1,3 +1,4 @@
+import { useCreateCheckoutSession } from "@/api/OrderApi";
 import { useGetRestaurant } from "@/api/RestaurantApi";
 import CheckoutButton from "@/components/CheckoutButton";
 import MenuItem from "@/components/MenuItem";
@@ -17,9 +18,94 @@ export type CartItem = {
   quantity: number;
 };
 
+// const DetailPage = () => {
+//   const { restaurantId } = useParams();
+//   const { restaurant, isLoading } = useGetRestaurant(restaurantId);
+//   const { createCheckoutSession, isLoading: isCheckoutLoading } =
+//     useCreateCheckoutSession();
+// //TODO
+//   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+//     const storedCartItems = sessionStorage.getItem(`cartItems-${restaurantId}`);
+//     return storedCartItems ? JSON.parse(storedCartItems) : [];
+//   });
+
+//   const addToCart = (menuItem: MenuItemType) => {
+//     setCartItems((prevCartItems) => {
+//       const existingCartItem = prevCartItems.find(
+//         (cartItem) => cartItem._id === menuItem._id
+//       );
+
+//       let updatedCartItems;
+
+//       if (existingCartItem) {
+//         updatedCartItems = prevCartItems.map((cartItem) =>
+//           cartItem._id === menuItem._id
+//             ? { ...cartItem, quantity: cartItem.quantity + 1 }
+//             : cartItem
+//         );
+//       } else {
+//         updatedCartItems = [
+//           ...prevCartItems,
+//           {
+//             _id: menuItem._id,
+//             name: menuItem.name,
+//             price: menuItem.price,
+//             quantity: 1,
+//           },
+//         ];
+//       }
+
+//       sessionStorage.setItem(
+//         `cartItems-${restaurantId}`,
+//         JSON.stringify(updatedCartItems)
+//       );
+//       return updatedCartItems;
+//     });
+//   };
+
+//   const removeFromCart = (cartItem: CartItem) => {
+//     setCartItems((prevCartItems) => {
+//       const updatedCartItems = prevCartItems.filter(
+//         (item) => cartItem._id !== item._id
+//       );
+
+//       sessionStorage.setItem(
+//         `cartItems-${restaurantId}`,
+//         JSON.stringify(updatedCartItems)
+//       );
+
+//       return updatedCartItems;
+//     });
+//   };
+
+//   const onCheckout = async (userFormData: UserFormData) => {
+//     if (!restaurant) {
+//       return;
+//     }
+//     const checkoutData = {
+//       cartItems: cartItems.map((cartItem) => ({
+//         menuItemId: cartItem._id,
+//         name: cartItem.name,
+//         quantity: cartItem.quantity.toString(),
+//       })),
+//       restaurantId: restaurant._id,
+//       deliveryDetails: {
+//         name: userFormData.name,
+//         address: userFormData.address,
+//         city: userFormData.city,
+//         country: userFormData.country,
+//         email: userFormData.email as string,
+//       },
+//     };
+//     const data = await createCheckoutSession(checkoutData);
+//     window.location.href = data.url;
+//   };
+
 const DetailPage = () => {
   const { restaurantId } = useParams();
   const { restaurant, isLoading } = useGetRestaurant(restaurantId);
+  const { createCheckoutSession, isLoading: isCheckoutLoading } =
+    useCreateCheckoutSession();
 
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     const storedCartItems = sessionStorage.getItem(`cartItems-${restaurantId}`);
@@ -28,13 +114,13 @@ const DetailPage = () => {
 
   const addToCart = (menuItem: MenuItemType) => {
     setCartItems((prevCartItems) => {
-      const exisitingCartItem = prevCartItems.find(
+      const existingCartItem = prevCartItems.find(
         (cartItem) => cartItem._id === menuItem._id
       );
 
       let updatedCartItems;
 
-      if (exisitingCartItem) {
+      if (existingCartItem) {
         updatedCartItems = prevCartItems.map((cartItem) =>
           cartItem._id === menuItem._id
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
@@ -56,6 +142,7 @@ const DetailPage = () => {
         `cartItems-${restaurantId}`,
         JSON.stringify(updatedCartItems)
       );
+
       return updatedCartItems;
     });
   };
@@ -75,8 +162,29 @@ const DetailPage = () => {
     });
   };
 
-  const onCheckout = (userFormData: UserFormData) => {
-    console.log("userFormData", userFormData);
+  const onCheckout = async (userFormData: UserFormData) => {
+    if (!restaurant) {
+      return;
+    }
+
+    const checkoutData = {
+      cartItems: cartItems.map((cartItem) => ({
+        menuItemId: cartItem._id,
+        name: cartItem.name,
+        quantity: cartItem.quantity.toString(),
+      })),
+      restaurantId: restaurant._id,
+      deliveryDetails: {
+        name: userFormData.name,
+        address: userFormData.address,
+        city: userFormData.city,
+        country: userFormData.country,
+        email: userFormData.email as string,
+      },
+    };
+
+    const data = await createCheckoutSession(checkoutData);
+    window.location.href = data.url;
   };
   if (isLoading || !restaurant) {
     //TODO
@@ -114,6 +222,7 @@ const DetailPage = () => {
               <CheckoutButton
                 disabled={cartItems.length === 0}
                 onCheckout={onCheckout}
+                isLoading={isCheckoutLoading}
               />
             </CardFooter>
           </Card>
