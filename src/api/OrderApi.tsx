@@ -18,48 +18,7 @@ type CheckoutSessionRequest = {
   };
   restaurantId: string;
 };
-//TODO
-// export const useCreateCheckoutSession = () => {
-//   const { getAccessTokenSilently } = useAuth0();
 
-//   const createCheckoutSessionRequest = async (
-//     checkoutSessionRequest: CheckoutSessionRequest
-//   ) => {
-//     const accessToken = await getAccessTokenSilently();
-
-//     const response = await fetch(
-//       `${API_BASE_URL}/api/order/checkout/create-checkout-session`,
-//       {
-//         method: "POST",
-//         headers: {
-//           Authorization: `Bearer ${accessToken}`,
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(checkoutSessionRequest),
-//       }
-//     );
-//     if (!response.ok) {
-//       throw new Error("Unable to create checkout session");
-//     }
-//     return response.json();
-//   };
-
-//   const {
-//     mutateAsync: createCheckoutSession,
-//     isLoading,
-//     error,
-//     reset,
-//   } = useMutation(createCheckoutSessionRequest);
-
-//   if (error) {
-//     toast.error(error.toString());
-//     reset();
-//   }
-//   return {
-//     createCheckoutSession,
-//     isLoading,
-//   };
-// };
 export const useCreateCheckoutSession = () => {
   const { getAccessTokenSilently } = useAuth0();
 
