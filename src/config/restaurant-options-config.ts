@@ -26,5 +26,3 @@ export const cuisineList = [
   "Tapas",
   "Vegan",
 ];
-//TODO
-// cuisine list

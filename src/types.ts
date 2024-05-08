@@ -45,6 +45,7 @@ export type Order = {
   deliveryDetails: {
     name: string;
     address: string;
+    city: string;
     email: string;
   };
   totalAmount: number;
