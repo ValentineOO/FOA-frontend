@@ -18,7 +18,7 @@ const ManageRestaurantPage = () => {
   const { orders } = useGetMyRestaurantOrders();
 
   const isEditing = !!restaurant;
-  return (
+  return ( 
     <Tabs defaultValue="orders">
       <TabsList>
         <TabsTrigger value="orders">Orders</TabsTrigger>
