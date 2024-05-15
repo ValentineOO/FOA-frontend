@@ -28,7 +28,6 @@ const MobileNavLinks = () => {
         onClick={() => logout()}
         className="flex items-center px-3 font-bold hover:bg-gray-500"
       >
-        {" "}
         Logout
       </Button>
     </>
@@ -36,3 +35,4 @@ const MobileNavLinks = () => {
 };
 
 export default MobileNavLinks;
+//TODO

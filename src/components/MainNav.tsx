@@ -18,9 +18,7 @@ const MainNav = () => {
         <Button
           variant="ghost"
           className="font-bold hover:text-orange-500 hover:bg-white"
-          onClick={async () => {
-            await loginWithRedirect();
-          }}
+          onClick={async () => await loginWithRedirect()}
         >
           Login
         </Button>
@@ -30,3 +28,4 @@ const MainNav = () => {
 };
 
 export default MainNav;
+//TODO

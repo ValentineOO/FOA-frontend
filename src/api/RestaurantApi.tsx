@@ -53,5 +53,9 @@ export const useSearchRestaurants = (
     { enabled: !!city }
   );
 
-  return { results, isLoading };
+  return {
+    results,
+    isLoading,
+  };
 };
+//TODO

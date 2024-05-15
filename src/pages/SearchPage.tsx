@@ -14,6 +14,7 @@ export type SearchState = {
   selectedCuisines: string[];
   sortOption: string;
 };
+
 const SearchPage = () => {
   const { city } = useParams();
   const [searchState, setSearchState] = useState<SearchState>({
@@ -71,8 +72,9 @@ const SearchPage = () => {
   }
 
   if (!results?.data || !city) {
-    return <span>No results found</span>; //loading
+    return <span>No results found</span>;
   }
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-5">
       <div id="cuisines-list">
@@ -89,7 +91,7 @@ const SearchPage = () => {
         <SearchBar
           searchQuery={searchState.searchQuery}
           onSubmit={setSearchQuery}
-          placeHolder="Search by Cuisine or Restaurant name"
+          placeHolder="Search by Cuisine or Restaurant Name"
           onReset={resetSearch}
         />
         <div className="flex justify-between flex-col gap-3 lg:flex-row">
@@ -113,3 +115,4 @@ const SearchPage = () => {
 };
 
 export default SearchPage;
+//TODO

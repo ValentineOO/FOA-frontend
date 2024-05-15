@@ -20,7 +20,6 @@ type Props = {
 
 const OrderItemCard = ({ order }: Props) => {
   const { updateRestaurantStatus, isLoading } = useUpdateMyRestaurantOrder();
-
   const [status, setStatus] = useState<OrderStatus>(order.status);
 
   useEffect(() => {
@@ -83,7 +82,7 @@ const OrderItemCard = ({ order }: Props) => {
             </span>
           ))}
         </div>
-        <div className="flex flex-col space-y-1 5">
+        <div className="flex flex-col space-y-1.5">
           <Label htmlFor="status">What is the status of this order?</Label>
           <Select
             value={status}
@@ -91,7 +90,7 @@ const OrderItemCard = ({ order }: Props) => {
             onValueChange={(value) => handleStatusChange(value as OrderStatus)}
           >
             <SelectTrigger id="status">
-              <SelectValue placeholder="status" />
+              <SelectValue placeholder="Status" />
             </SelectTrigger>
             <SelectContent position="popper">
               {ORDER_STATUS.map((status) => (
@@ -106,3 +105,4 @@ const OrderItemCard = ({ order }: Props) => {
 };
 
 export default OrderItemCard;
+//TODO

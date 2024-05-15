@@ -54,6 +54,7 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
       >
         <Search
           strokeWidth={2.5}
+          size={30}
           className="ml-1 text-orange-500 hidden md:block"
         />
         <FormField
@@ -88,3 +89,4 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
 };
 
 export default SearchBar;
+//TODO

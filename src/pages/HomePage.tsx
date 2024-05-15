@@ -29,7 +29,7 @@ const HomePage = () => {
             Order takeaway even faster!
           </span>
           <span>
-            Download the meanEats App for faster ordering and personalized
+            Download the MernEats App for faster ordering and personalized
             recommendations
           </span>
           <img src={appDownloadImage} />
@@ -40,3 +40,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+//TODO

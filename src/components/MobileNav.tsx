@@ -6,9 +6,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
-
-import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
+import { Button } from "./ui/button";
 import { useAuth0 } from "@auth0/auth0-react";
 import MobileNavLinks from "./MobileNavLinks";
 
@@ -22,12 +21,12 @@ const MobileNav = () => {
       <SheetContent className="space-y-3">
         <SheetTitle>
           {isAuthenticated ? (
-            <span className="flex gap-lex items-center font-bold gap-2 ">
+            <span className="flex items-center font-bold gap-2">
               <CircleUserRound className="text-orange-500" />
               {user?.email}
             </span>
           ) : (
-            <span>Welcome to MernEats.com!</span>
+            <span> Welcome to MernEats.com!</span>
           )}
         </SheetTitle>
         <Separator />
@@ -49,3 +48,4 @@ const MobileNav = () => {
 };
 
 export default MobileNav;
+//TODO

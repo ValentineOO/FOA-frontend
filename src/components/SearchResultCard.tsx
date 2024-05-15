@@ -1,7 +1,7 @@
 import { Restaurant } from "@/types";
 import { Link } from "react-router-dom";
-import { Banknote, Clock, Dot } from "lucide-react";
 import { AspectRatio } from "./ui/aspect-ratio";
+import { Banknote, Clock, Dot } from "lucide-react";
 
 type Props = {
   restaurant: Restaurant;
@@ -49,3 +49,4 @@ const SearchResultCard = ({ restaurant }: Props) => {
 };
 
 export default SearchResultCard;
+//TODO

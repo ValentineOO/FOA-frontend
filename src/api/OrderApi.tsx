@@ -22,7 +22,7 @@ export const useGetMyOrders = () => {
     return response.json();
   };
   const { data: orders, isLoading } = useQuery(
-    "fetchOrders",
+    "fetchMyOrders",
     getMyOrdersRequest,
     {
       refetchInterval: 5000,
@@ -90,3 +90,4 @@ export const useCreateCheckoutSession = () => {
     isLoading,
   };
 };
+//TODO

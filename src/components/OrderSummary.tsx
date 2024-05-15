@@ -13,7 +13,6 @@ type Props = {
 
 const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
   const getTotalCost = () => {
-    //TODO
     const totalInPence = cartItems.reduce(
       (total, cartItem) => total + cartItem.price * cartItem.quantity,
       0
@@ -52,7 +51,7 @@ const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
         ))}
         <Separator />
         <div className="flex justify-between">
-          <span>Delivery</span>{" "}
+          <span>Delivery</span>
           <span>£{(restaurant.deliveryPrice / 100).toFixed(2)}</span>
         </div>
         <Separator />
@@ -62,3 +61,4 @@ const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
 };
 
 export default OrderSummary;
+//TODO

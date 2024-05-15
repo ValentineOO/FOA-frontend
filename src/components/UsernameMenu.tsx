@@ -7,8 +7,8 @@ import {
 } from "./ui/dropdown-menu";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
-import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
+import { Button } from "./ui/button";
 
 const UsernameMenu = () => {
   const { user, logout } = useAuth0();
@@ -24,7 +24,7 @@ const UsernameMenu = () => {
             to="/manage-restaurant"
             className="font-bold hover:text-orange-500"
           >
-            Manage Restaurant{" "}
+            Manage Restaurant
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -35,9 +35,7 @@ const UsernameMenu = () => {
         <Separator />
         <DropdownMenuItem>
           <Button
-            onClick={() => {
-              logout();
-            }}
+            onClick={() => logout()}
             className="flex flex-1 font-bold bg-orange-500"
           >
             Logout
@@ -49,3 +47,4 @@ const UsernameMenu = () => {
 };
 
 export default UsernameMenu;
+//TODO

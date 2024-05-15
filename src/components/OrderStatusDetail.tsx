@@ -9,7 +9,7 @@ const OrderStatusDetail = ({ order }: Props) => {
   return (
     <div className="space-y-5">
       <div className="flex flex-col">
-        <span className="font-bol">Delivery to:</span>
+        <span className="font-bold">Delivering to:</span>
         <span>{order.deliveryDetails.name}</span>
         <span>
           {order.deliveryDetails.address}, {order.deliveryDetails.city}
@@ -20,7 +20,7 @@ const OrderStatusDetail = ({ order }: Props) => {
         <ul>
           {order.cartItems.map((item) => (
             <li>
-              {item.name} X {item.quantity}
+              {item.name} x {item.quantity}
             </li>
           ))}
         </ul>
@@ -35,3 +35,4 @@ const OrderStatusDetail = ({ order }: Props) => {
 };
 
 export default OrderStatusDetail;
+//TODO
