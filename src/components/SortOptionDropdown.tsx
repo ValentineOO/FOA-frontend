@@ -52,4 +52,3 @@ const SortOptionDropdown = ({ onChange, sortOption }: Props) => {
 };
 
 export default SortOptionDropdown;
-//TODO

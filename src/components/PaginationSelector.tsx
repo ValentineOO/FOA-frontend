@@ -52,4 +52,3 @@ const PaginationSelector = ({ page, pages, onPageChange }: Props) => {
 };
 
 export default PaginationSelector;
-//TODO

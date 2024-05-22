@@ -1,4 +1,4 @@
-import landingImage from "../assets/landing.png";
+import landingImage from "../assets/mobile.jpeg";
 import appDownloadImage from "../assets/appDownload.png";
 import SearchBar, { SearchForm } from "@/components/SearchBar";
 import { useNavigate } from "react-router-dom";
@@ -13,8 +13,9 @@ const HomePage = () => {
   return (
     <div className="flex flex-col gap-12">
       <div className="md:px-32 bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center -mt-16">
-        <h1 className="text-5xl font-bold tracking-tight text-orange-600">
-          Tuck into a takeaway today
+        <h1 className="text-5xl font-bold tracking-tight text-Teal">
+          {/* Tuck into a takeaway today */}
+          Savor some takeouts today
         </h1>
         <span className="text-xl">Food is just a click away!</span>
         <SearchBar
@@ -29,7 +30,7 @@ const HomePage = () => {
             Order takeaway even faster!
           </span>
           <span>
-            Download the MernEats App for faster ordering and personalized
+            Coming soon, the Tasty Trails App for faster ordering and personalized
             recommendations
           </span>
           <img src={appDownloadImage} />
@@ -40,4 +41,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-//TODO

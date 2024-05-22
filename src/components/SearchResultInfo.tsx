@@ -22,4 +22,3 @@ const SearchResultInfo = ({ total, city }: Props) => {
 };
 
 export default SearchResultInfo;
-//TODO

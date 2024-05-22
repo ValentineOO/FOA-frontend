@@ -22,4 +22,3 @@ const AuthCallbackPage = () => {
 };
 
 export default AuthCallbackPage;
-//TODO

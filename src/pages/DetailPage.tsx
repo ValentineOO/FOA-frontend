@@ -148,4 +148,3 @@ const DetailPage = () => {
 };
 
 export default DetailPage;
-//TODO

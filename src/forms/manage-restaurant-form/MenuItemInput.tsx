@@ -63,4 +63,3 @@ const MenuItemInput = ({ index, removeMenuItem }: Props) => {
 };
 
 export default MenuItemInput;
-//TODO

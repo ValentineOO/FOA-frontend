@@ -49,4 +49,3 @@ const SearchResultCard = ({ restaurant }: Props) => {
 };
 
 export default SearchResultCard;
-//TODO

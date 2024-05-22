@@ -36,4 +36,3 @@ const RestaurantInfo = ({ restaurant }: Props) => {
 };
 
 export default RestaurantInfo;
-//TODO

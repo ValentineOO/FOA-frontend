@@ -124,4 +124,3 @@ export const useUpdateMyUser = () => {
 
   return { updateUser, isLoading };
 };
-//TODO

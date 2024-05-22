@@ -68,7 +68,7 @@ const SearchPage = () => {
   };
 
   if (isLoading) {
-    <span>Loading ...</span>; //TODO
+    <span>Loading ...</span>;
   }
 
   if (!results?.data || !city) {
@@ -115,4 +115,3 @@ const SearchPage = () => {
 };
 
 export default SearchPage;
-//TODO

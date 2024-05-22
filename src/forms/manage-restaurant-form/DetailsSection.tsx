@@ -91,5 +91,3 @@ const DetailsSection = () => {
 };
 
 export default DetailsSection;
-
-//TODO

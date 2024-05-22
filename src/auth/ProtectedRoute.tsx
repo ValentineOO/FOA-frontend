@@ -3,9 +3,8 @@ import { Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoute = () => {
   const { isAuthenticated, isLoading } = useAuth0();
-  //TODO
   if (isLoading) {
-    return null; // Show a loading indicator
+    return null;
   }
 
   if (isAuthenticated) {

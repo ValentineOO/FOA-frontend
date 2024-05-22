@@ -30,4 +30,3 @@ const CuisineCheckbox = ({ cuisine, field }: Props) => {
 };
 
 export default CuisineCheckbox;
-//TODO

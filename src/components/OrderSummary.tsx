@@ -61,4 +61,3 @@ const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
 };
 
 export default OrderSummary;
-//TODO

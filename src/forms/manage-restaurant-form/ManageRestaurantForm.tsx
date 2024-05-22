@@ -141,4 +141,3 @@ const ManageRestaurantForm = ({ onSave, isLoading, restaurant }: Props) => {
 };
 
 export default ManageRestaurantForm;
-//TODO

@@ -38,4 +38,3 @@ const CuisinesSection = () => {
 };
 
 export default CuisinesSection;
-//TODO

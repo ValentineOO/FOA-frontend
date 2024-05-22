@@ -11,4 +11,3 @@ const LoadingButton = () => {
 };
 
 export default LoadingButton;
-//TODO
